@@ -1,0 +1,38 @@
+Forensics 5: grep 'POST /login HTTP/1.1' log.txt | awk '{print $9}' | sort | uniq -c | sort -nr
+
+Linux Commands:
+
+1- No command just check the username
+2- No command just check the hostname
+3- touch file.txt & nano file.txt
+4- unzip files.zip
+5- rm file.txt
+6- ip a
+7- ls -la & cat .hidden.txt
+8- chmod 555 file.txt
+9- find / -type f -name "secret.txt" 
+10- printenv secret
+11- tail /etc/passwd
+12- ls -all /home
+13- touch /home/player/emptyfile.txt
+14- cp -r ~/files /tmp
+15- md5sum file.txt
+16- cat /etc/hosts
+17- cat /home/player/file.txt | grep 'flagyard'
+18- mv file.txt flagyard.txt
+19- nano flagyard.py -> change print["Flagyard"] to print("Flagyard") -> chmod +x flagyard.py
+20- tar -czvf ~/backup.tar.gz -C ~/ file.txt
+21- cat file.txt | base64 --decode
+22- history
+23- ln -s ~/file1.txt ~/file2.txt
+24- cat creds.txt -> su admin -> enter the password -> cat secret.txt
+25- cat -A readme.txt
+27- readlink -f follow_the_white_rabbit
+
+26-
+exec 3<>/dev/tcp/localhost/80
+echo -e "GET /index.php HTTP/1.1\r\nHost: localhost\r\nConnection: close\r\n\r\n" >&3
+cat <&3 > response.txt
+exec 3<&-
+exec 3>&-
+cat response.txt
